@@ -1,10 +1,30 @@
-from email.message import Message
 from fastapi import FastAPI
+from fastapi.openapi.utils import get_openapi
 import datetime
 import random
 
+def create_application() -> FastAPI:
+    application = FastAPI(
+        title='Slack API',
+        version='0.1',
+        contact={
+            "name": "pimvandenbroek",
+            "url": "https://github.com/pimvandenbroek/tijdvoorbier",
+        },
+        debug=True,
+        docs_url='/docs',
+        redoc_url='/redoc',
+        #root_path='/slack'
+    )
 
-app = FastAPI()
+    @application.get('/health', include_in_schema=False)
+    def health():
+        return {'Message': 'OK'}
+
+    return application
+
+
+app = create_application()
 
 def slack_payload():
     now = datetime.datetime.now()

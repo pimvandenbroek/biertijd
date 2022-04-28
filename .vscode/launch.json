@@ -16,7 +16,8 @@
                 "--reload"
             ],
             "jinja": true,
-            "justMyCode": true
+            "justMyCode": true,
+            "cwd": "${workspaceFolder}/app/"
         }
     ]
 }
