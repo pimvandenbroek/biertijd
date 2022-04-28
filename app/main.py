@@ -9,7 +9,7 @@ def create_application() -> FastAPI:
         version='0.1',
         contact={
             "name": "pimvandenbroek",
-            "url": "https://github.com/pimvandenbroek/tijdvoorbier",
+            "url": "https://github.com/pimvandenbroek/biertijd",
         },
         debug=True,
         docs_url='/docs',
